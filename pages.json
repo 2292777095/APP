@@ -8,14 +8,6 @@
 		// "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
 	},
 	"pages": [{
-			"path": "pages/login/index",
-			"style": {
-				// #ifdef H5
-				"titleNView": false,
-				// #endif
-				"enablePullDownRefresh": false
-			}
-		},{
 			"path": "pages/index/default/default",
 			"style": {
 				"navigationBarTextStyle": "white",
@@ -24,6 +16,14 @@
 				"titleNView": false,
 				// #endif
 				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/login/index",
+			"style": {
+				// #ifdef H5
+				"titleNView": false,
+				// #endif
+				"enablePullDownRefresh": false
 			}
 		},
 		{
@@ -148,7 +148,7 @@
 				"enablePullDownRefresh": false
 			}
 		},
-		 {
+		{
 			"path": "pages/login/forgotPwd",
 			"style": {
 				"navigationBarTitleText": "找回密码",
