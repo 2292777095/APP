@@ -30,7 +30,7 @@ Vue.mixin({
             $globalConstVars: GlobalConstVars
         }
     }
-})
+});
 
 Vue.config.productionTip = false
 Vue.prototype.$upload = Upload;
@@ -39,7 +39,6 @@ Vue.prototype.$db = Db;
 Vue.prototype.$globalConstVars = GlobalConstVars;
 Vue.prototype.$coreTheme = CoreTheme;
 Vue.prototype.$store = store;
-
 App.mpType = 'app'
 
 const app = new Vue({

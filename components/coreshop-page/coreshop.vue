@@ -43,6 +43,7 @@
             <coreshopadpop :coreshopdata="item" v-if="item.widgetCode=='adpop' "></coreshopadpop>
             <!--文本内容（修复）-->
             <coreshopContent :coreshopdata="item" v-if="item.widgetCode=='content' "></coreshopContent>
+			<coreshopMine  :coreshopdata="item" v-if="item.widgetCode=='account' "></coreshopMine>
         </block>
     </view>
 </template>

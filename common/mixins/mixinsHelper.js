@@ -116,7 +116,7 @@ export const goods = {
     methods: {
         // 查看商品详情
         goGoodsDetail(goodsId) {
-            this.$u.route('/pages/goods/goodDetails/goodDetails', { id: goodsId });
+            this.$u.route('/pages/detail/detail/curriculum', { id: goodsId });
         },
         // 查看商品评论详情
         goGoodComments(goodsId) {

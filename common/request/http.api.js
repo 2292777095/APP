@@ -1,4 +1,4 @@
-// 此处第二个参数vm，就是我们在页面使用的this，你可以通过vm获取vuex等操作，更多内容详见uView对拦截器的介绍部分：
+﻿// 此处第二个参数vm，就是我们在页面使用的this，你可以通过vm获取vuex等操作，更多内容详见uView对拦截器的介绍部分：
 // https://uviewui.com/js/http.html#%E4%BD%95%E8%B0%93%E8%AF%B7%E6%B1%82%E6%8B%A6%E6%88%AA%EF%BC%9F
 const install = (Vue, vm) => {
 
@@ -852,6 +852,7 @@ const install = (Vue, vm) => {
 		needToken: true
 	});
 
+
 	//门店核销的服务券列表
 	let getverificationPageList = (params = {}) => vm.$u.post('/Api/Service/VerificationPageList', params, {
 		method: 'service.verificationPageList',
@@ -872,21 +873,76 @@ const install = (Vue, vm) => {
 		method: 'service.verificationTicket',
 		needToken: true
 	});
-
+	//获取订单信息
+	let getOrderbyuser = (params = {}) => vm.$u.get('/api/order/getorderbyuserid', params, Headers = {
+		'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1ZjUyNGYwNy02YTE1LTQwNTktOGM3Mi1hOWM3NjYyN2I1MGUiLCJuYmYiOjE2NjY1NzU1MzEsImV4cCI6MTY2OTE2NzUzMSwiaXNzIjoiZW90YyIsImF1ZCI6ImVvdGMifQ.ckuH1OsS7Xc7e7nqUhWnk-RRkr_fqWUd8EVeTJOppig'
+	});
+	//获取订单
+	let getOrderby = (params = {}) => vm.$u.get('/api/order/orderbyid', params, Headers = {
+		'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1ZjUyNGYwNy02YTE1LTQwNTktOGM3Mi1hOWM3NjYyN2I1MGUiLCJuYmYiOjE2NjY0MzA5OTYsImV4cCI6MTY2OTAyMjk5NiwiaXNzIjoiZW90YyIsImF1ZCI6ImVvdGMifQ.o_CMyCVBdNN_8QMmLe1EFBwjYQM0fHdAuusIzd19yfg'
+	});
+	//支付订单
+	let payorder = (params = {}) => vm.$u.post('/api/order/payorder?orderid=' + params.orderid, params, Headers = {
+		'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1ZjUyNGYwNy02YTE1LTQwNTktOGM3Mi1hOWM3NjYyN2I1MGUiLCJuYmYiOjE2NjY0MzA5OTYsImV4cCI6MTY2OTAyMjk5NiwiaXNzIjoiZW90YyIsImF1ZCI6ImVvdGMifQ.o_CMyCVBdNN_8QMmLe1EFBwjYQM0fHdAuusIzd19yfg'
+	});
+	//取消订单
+	let cancelorder = (params = {}) => vm.$u.post('/api/order/cancelorder?orderid=' + params.orderid, params,
+		Headers = {
+			'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1ZjUyNGYwNy02YTE1LTQwNTktOGM3Mi1hOWM3NjYyN2I1MGUiLCJuYmYiOjE2NjY0MzA5OTYsImV4cCI6MTY2OTAyMjk5NiwiaXNzIjoiZW90YyIsImF1ZCI6ImVvdGMifQ.o_CMyCVBdNN_8QMmLe1EFBwjYQM0fHdAuusIzd19yfg'
+		});
+	//添加订单
+	let apporder = (params = {}) => vm.$u.post('/api/order/order', params, Headers = {
+		'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1ZjUyNGYwNy02YTE1LTQwNTktOGM3Mi1hOWM3NjYyN2I1MGUiLCJuYmYiOjE2NjY0MzA5OTYsImV4cCI6MTY2OTAyMjk5NiwiaXNzIjoiZW90YyIsImF1ZCI6ImVvdGMifQ.o_CMyCVBdNN_8QMmLe1EFBwjYQM0fHdAuusIzd19yfg'
+	});
+	//修改用户订单信息
+	let updateOrder=(params={})=>vm.$u.put('/api/order/orderuser',params,Headers = {
+		'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1ZjUyNGYwNy02YTE1LTQwNTktOGM3Mi1hOWM3NjYyN2I1MGUiLCJuYmYiOjE2NjY0MzA5OTYsImV4cCI6MTY2OTAyMjk5NiwiaXNzIjoiZW90YyIsImF1ZCI6ImVvdGMifQ.o_CMyCVBdNN_8QMmLe1EFBwjYQM0fHdAuusIzd19yfg'
+	})
+	//获取公告
+	let getNotice=(params={})=>vm.$u.get('/api/notice/notice',params,Headers = {
+		'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1ZjUyNGYwNy02YTE1LTQwNTktOGM3Mi1hOWM3NjYyN2I1MGUiLCJuYmYiOjE2NjY0MzA5OTYsImV4cCI6MTY2OTAyMjk5NiwiaXNzIjoiZW90YyIsImF1ZCI6ImVvdGMifQ.o_CMyCVBdNN_8QMmLe1EFBwjYQM0fHdAuusIzd19yfg'
+	})
+	//获取公告详情
+	let noticebyId=(params={})=>vm.$u.get('/api/notice/noticebyid',params,Headers = {
+		'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1ZjUyNGYwNy02YTE1LTQwNTktOGM3Mi1hOWM3NjYyN2I1MGUiLCJuYmYiOjE2NjYxNDMwNjQsImV4cCI6MTY2ODczNTA2NCwiaXNzIjoiZW90YyIsImF1ZCI6ImVvdGMifQ.if1ge1jkegAMYK8Lc6w8ETX8eny37qkD_1RBE8XRCT8'
+	})
 	// 获取验证码
-	let getcode = (params = {}) => vm.$u.get('/api/user/getcode', params, {
-		needToken: false
-	})
+	let getcode = (params = {}) => vm.$u.get('/api/user/getcode', params, {needToken: false})
 	// 登录
-	let login = (params = {}) => vm.$u.post('/api/user/login', params, {
-		needToken: false
+	let login = (params = {}) => vm.$u.post('/api/user/login', params, {needToken: false})
+	//添加订单
+	let addOrder=(params={})=>vm.$u.post('/api/order/order',params,Headers = {
+		'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1ZjUyNGYwNy02YTE1LTQwNTktOGM3Mi1hOWM3NjYyN2I1MGUiLCJuYmYiOjE2NjY1NzU1MzEsImV4cCI6MTY2OTE2NzUzMSwiaXNzIjoiZW90YyIsImF1ZCI6ImVvdGMifQ.ckuH1OsS7Xc7e7nqUhWnk-RRkr_fqWUd8EVeTJOppig'
 	})
-	// 找回密码
-	let forgotPWD = (params = {}) => vm.$u.post('/api/user/retrievepassword', params, {
-		needToken: false
+	//获取系统
+	let getClsystem=(params={})=>vm.$u.get('/api/clsystem/clsystem',params,Headers = {
+		'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1ZjUyNGYwNy02YTE1LTQwNTktOGM3Mi1hOWM3NjYyN2I1MGUiLCJuYmYiOjE2NjY1NzU1MzEsImV4cCI6MTY2OTE2NzUzMSwiaXNzIjoiZW90YyIsImF1ZCI6ImVvdGMifQ.ckuH1OsS7Xc7e7nqUhWnk-RRkr_fqWUd8EVeTJOppig'
 	})
+	// 用户注册（废弃，改为自动获取app数据及使用短信验证码登录）建议直接使用smsLogin接口
+	//let reg  = (params = {}) => vm.$u.post('/Api/Common/InterFaceTest', params, { method: 'user.reg', needToken: true });
+	// 用户登录(废弃，改为短信验证码登录)
+	//let login  = (params = {}) => vm.$u.post('/Api/Common/InterFaceTest', params, { method: 'user.login', needToken: true });
+	// 获取用户信息(废弃)
+	// let trustLogin  = (params = {}) => vm.$u.post('/Api/Common/InterFaceTest', params, { method: 'user.trustcallback', needToken: true });
+	// 订单售后状态(废弃方法，建议直接用order.details接口)
+	// let afterSalesStatus  = (params = {}) => vm.$u.post('/Api/Common/InterFaceTest', params, { method: 'order.aftersalesstatus', needToken: true });
+	// 我的积分（弃用）
+	//let myPoint  = (params = {}) => vm.$u.post('/Api/Common/InterFaceTest', params, { method: 'user.mypoint', needToken: true });
+
 	// 将各个定义的接口名称，统一放进对象挂载到vm.$u.api(因为vm就是this，也即this.$u.api)下
 	vm.$u.api = {
+		getClsystem,
+		addOrder,
+		getcode,
+		login,
+		noticebyId,
+		getNotice,
+		updateOrder,
+		apporder,
+		getOrderbyuser,
+		getOrderby,
+		payorder,
+		cancelorder,
 		shopConfigV2,
 		getServiceDescription,
 		userInfo,
@@ -1062,11 +1118,7 @@ const install = (Vue, vm) => {
 		getverificationPageList,
 		serviceLogDelete,
 		getServiceVerificationTicketInfo,
-		serviceVerificationTicket,
-
-		getcode, //获取邮箱验证码
-		login, //登录
-		forgotPWD, //找回密码
+		serviceVerificationTicket
 	};
 }
 

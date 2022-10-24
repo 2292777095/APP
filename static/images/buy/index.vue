@@ -6,28 +6,27 @@
 		<img class='index_buy' src="@/static/images/buy/index_buy.png" alt="">
 		<view class="content">
 			<view class="title">全球首个区块链缠论指标系统</view>
-			<view class="account-box" >
-				<view class="account" v-for="item,index in arr"  :class="{selected:isSelected}"  @click="handleSelected(index)">
-					<view v-if="item.type==0">1个月</view>
-					<view v-if="item.type==1">12个月</view>
+			<view class="account-box">
+				<view class="account" :class="{selected:isSelected1}" @click="handleSelected">
+					<view>1个月</view>
 					<view>
-						<span>{{item.price}}</span>
+						<span>1000</span>
 						<span>USDT</span>
 					</view>
-					<view>{{item.name}}</view>
+					<view>币秋账号</view>
 				</view>
-				<!-- <view class="account" :class="{selected:isSelected}" @click="handleSelected">
-					<view>12个月</view>
+				<view class="account" :class="{selected:isSelected2}" @click="handleSelected">
+					<view>1个月</view>
 					<view>
-						<span>10000</span>
+						<span>1000</span>
 						<span>USDT</span>
 					</view>
-					<view>{{item.name}}</view>
-				</view> -->
+					<view>币秋账号</view>
+				</view>
 			</view>
 		</view>
 		<view class="buy">
-			<button @click="btn_buy()">购买</button>
+			<button>购买</button>
 		</view>
 	</view>
 </template>
@@ -36,43 +35,14 @@
 	export default {
 		data() {
 			return {
-				isSelected: false,
-				// month:"",//月
-				// jifen:"",//积分
-				arr:[]
+				isSelected1: true,
+				isSelected2: false,
 			}
 		},
-		created() {
-			this.$u.api.getClsystem().then(res=>{
-				this.arr=res.items;
-				this.arr.map(item=>{
-					this.$set(item,'isSelected',false)
-				})
-				console.log(this.arr)
-			})
-		},
 		methods: {
-			handleSelected(index) {
-				this.arr[index].isSelected = true;
-				this.isSelected=this.arr[index].isSelected;
-								// this.list.map((val, idx) => {
-								// 	if (index != idx) this.list[idx].show = false;
-								// })
-
-				// this.isSelected=isSelected
-				// if(this.isSelected1){
-				// 	this.month=1;
-				// 	this.jifen=1000;
-				// }else if(this.isSelected2){
-				// 	this.month=12;
-				// 	this.jifen=10000;
-				// }
-			},
-			btn_buy(){
-					console.log()
-					uni.navigateTo({
-						url: `/pages/subOrder/index?month=${this.month}&total=${this.jifen}`
-					})
+			handleSelected() {
+				this.isSelected1 = !this.isSelected1
+				this.isSelected2 = !this.isSelected2
 			}
 		}
 	}

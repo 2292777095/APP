@@ -37,6 +37,9 @@
         },
         methods: {
             showSliderInfo(type, val) {
+				uni.navigateTo({
+					url: `/pages/buy/index`
+				})
                 console.log(type);
                 if (!val) {
                     return;

@@ -4,7 +4,8 @@
  */
 
 //接口请求地址，如果需要不部署接口端的情况下测试uni-app，可以直接替换为官方测试接口：https://api.demo.coreshop.cn
-export const apiBaseUrl = 'http://192.168.2.110:5555';
+export const apiBaseUrl = 'http://192.168.10.107:5555';
+// http://192.168.2.110:2015
 //项目静态资源请求地址，如果使用官方的静态文件地址可以直接替换为：https://files.cdn.coreshop.cn
 export const apiFilesUrl = 'https://files.cdn.coreshop.cn';
 

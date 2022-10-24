@@ -40,9 +40,12 @@
         },
         data() {
             return {
-                background: this.$coreTheme.mainNabBar.background,
-                titleColor: this.$coreTheme.mainNabBar.titleColor,
-
+                // background: this.$coreTheme.mainNabBar.background,
+                // titleColor: this.$coreTheme.mainNabBar.titleColor,
+				background: {
+					backgroundColor: '#FFFFFF'
+				},
+                titleColor: '#333333',
                 swiperItems: [],
                 currentIndex: 0,
                 opacity: 0,
@@ -54,7 +57,7 @@
                 kefupara: '', //客服传递资料
                 shareUrl: '/pages/share/jump/jump',
                 modalShow: true,
-                homeTitle: '',
+                homeTitle: '商城',
             };
         },
         computed: {

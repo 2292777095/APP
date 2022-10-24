@@ -14,9 +14,9 @@
 				<view class="wechat-top">
 					<view class="wechat-number">
 						<u-icon name="weixin-fill" size='47' color='#3CB034'></u-icon>
-						<span>we879635</span>
+						<span>{{value}}</span>
 					</view>
-					<view class="copy">复制</view>
+					<view class="copy" @click="copy(value)">复制</view>
 				</view>
 				<view class="wechat-img">
 					<img src="@/static/images/buy/index_buy.png" alt="">
@@ -34,11 +34,22 @@
 	export default {
 		data() {
 			return {
-
+				value:'we879635',
+			
 			}
 		},
+	
 		methods: {
-
+			copy(value) {
+				uni.setClipboardData({
+					data: value, //要被复制的内容
+					success: () => { //复制成功的回调函数
+						uni.showToast({ //提示
+							title: "复制成功"
+						})
+					}
+				});
+			}
 		}
 	}
 </script>

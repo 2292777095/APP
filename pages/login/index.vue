@@ -102,6 +102,7 @@
 			// 登录
 			login() {
 				this.$u.api.login(this.form).then(res => {
+					console.log(res);
 					if (res.code == 0) {
 						this.$refs.uToast.show({
 							title: '登录成功',

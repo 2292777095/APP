@@ -15,44 +15,7 @@
 				// #endif
 				"enablePullDownRefresh": false
 			}
-		}, {
-			"path": "pages/login/forgotPwd",
-			"style": {
-				"navigationBarTitleText": "找回密码",
-				// #ifdef H5
-				"titleNView": false,
-				// #endif
-				"enablePullDownRefresh": false
-			}
-		}, {
-			"path": "pages/subOrder/paySuccess",
-			"style": {
-				"navigationBarTitleText": " ",
-				// #ifdef H5
-				"titleNView": false,
-				// #endif
-				"enablePullDownRefresh": false
-			}
-		}, {
-			"path": "pages/subOrder/index",
-			"style": {
-				"navigationBarTitleText": "提交订单",
-				// #ifdef H5
-				"titleNView": false,
-				// #endif
-				"enablePullDownRefresh": false
-			}
-		}, {
-			"path": "pages/buy/index",
-			"style": {
-				"navigationBarTitleText": "购买",
-				// #ifdef H5
-				"titleNView": false,
-				// #endif
-				"enablePullDownRefresh": false
-			}
-		},
-		{
+		},{
 			"path": "pages/index/default/default",
 			"style": {
 				"navigationBarTextStyle": "white",
@@ -68,6 +31,28 @@
 			"style": {
 				"navigationBarTextStyle": "white",
 				"navigationBarTitleText": "首页",
+				// #ifdef H5
+				"titleNView": false,
+				// #endif
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/detail/detail/curriculum",
+			"style": {
+				"navigationBarTextStyle": "white",
+				"navigationBarTitleText": "详情",
+				// #ifdef H5
+				"titleNView": false,
+				// #endif
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/user/index",
+			"style": {
+				"navigationBarTextStyle": "white",
+				"navigationBarTitleText": "我的",
 				// #ifdef H5
 				"titleNView": false,
 				// #endif
@@ -114,6 +99,90 @@
 			"style": {
 				"navigationBarTextStyle": "black",
 				"navigationBarTitleText": "商品列表"
+			}
+		}, {
+			"path": "pages/user/order/order",
+			"style": {
+				"navigationBarTitleText": "我的订单",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/user/order/order_detail",
+			"style": {
+				"navigationBarTitleText": "订单详情",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/user/rafflerecord/rafflerecord",
+			"style": {
+				"navigationBarTitleText": "抽奖记录",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/user/transactionPsd/transactionPsd",
+			"style": {
+				"navigationBarTitleText": "交易密码",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/user/contact/index",
+			"style": {
+				"navigationBarTitleText": "联系我们",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/user/notice/index",
+			"style": {
+				"navigationBarTitleText": "公告",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/user/notice/detail",
+			"style": {
+				"navigationBarTitleText": "公告活动",
+				"enablePullDownRefresh": false
+			}
+		},
+		 {
+			"path": "pages/login/forgotPwd",
+			"style": {
+				"navigationBarTitleText": "找回密码",
+				// #ifdef H5
+				"titleNView": false,
+				// #endif
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/subOrder/paySuccess",
+			"style": {
+				"navigationBarTitleText": " ",
+				// #ifdef H5
+				"titleNView": false,
+				// #endif
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/subOrder/index",
+			"style": {
+				"navigationBarTitleText": "提交订单",
+				// #ifdef H5
+				"titleNView": false,
+				// #endif
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/buy/index",
+			"style": {
+				"navigationBarTitleText": "购买",
+				// #ifdef H5
+				"titleNView": false,
+				// #endif
+				"enablePullDownRefresh": false
 			}
 		}
 	],
